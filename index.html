@@ -24,33 +24,49 @@
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
     <meta name="msapplication-TileColor" content="#ffffff" />
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/hamburger.css">
+    <script src="./hamburger.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <title>Homepage</title>
   </head>
 
   <body>
-    <header>
-      <a href="./index.html"><img src="./img/Logo_web.svg" alt="logo" /></a>
-      <nav>
+    <header class="header">
+      <div class="hamburger-row">
+        <a href="./index.html"><img src="./img/Logo_web.svg" alt="logo" /></a>
+        <a
+              href="javascript:void(0)"
+              class="hamburger hamburger-btn hamburger-zone"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </a>
+      </div>
+      <nav class="navbar hamburger-nav hamburger-zone">
         <menu>
-          <li><a href="">Ceník</a></li>
-          <li><a href="">Kontakt</a></li>
+          <li><a href="#cenik">Ceník</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
           <li><a href="">Rezervace</a></li>
         </menu>
       </nav>
     </header>
     <main>
-      <section>
+      <section class="uvod">
         <h1>YokoStudio ....jóga a relaxace</h1>
         <p>
           Lekce jógy vedeme v menším počtu, což nám i Vám pomůže k individuální
           kontrole vašeho těla a provádění pozic. Můžete si ale zajistit i zcela
           individuální lekce jógy, kde se opravdu budeme věnovat jenom Vám.
         </p>
-        <img src="" alt="" />
+        <img class="uvod__img" src="./img/image__uvod.avif" alt="studio" />
       </section>
-      <section>
-        <div>
-          <a href="">
+      <section class="lekce__blok blok1">
+        <div class="lekce__nabidka">
+          <a href="" class="lekce__nabidka--odkaz">
             <h3>Jemná jóga</h3>
             <p>
               je zaměřená na láskyplné a jemné protažení nejvíce zatížených
@@ -59,8 +75,8 @@
             <p>Středa 17:00 - 18:00</p>
           </a>
         </div>
-        <div>
-          <a href="">
+        <div class="lekce__nabidka">
+          <a href="" class="lekce__nabidka--odkaz">
             <h3>Vitální jóga</h3>
             <p>
               pro ženy je prací pro vyladění hormonálních procesů v těle ženy.
@@ -68,9 +84,9 @@
           </a>
         </div>
       </section>
-      <section>
-        <div>
-          <a href="">
+      <section class="lekce__blok blok2">
+        <div class="lekce__nabidka">
+          <a href="" class="lekce__nabidka--odkaz">
             <h3>Hatha Flow jóga</h3>
             <p>
               je pro ty, kteří už jógu praktikují, znají trochu pozice a mají
@@ -79,8 +95,8 @@
             <p>Středa 18:30 - 19:30</p>
           </a>
         </div>
-        <div>
-          <a href="">
+        <div class="lekce__nabidka">
+          <a href="" class="lekce__nabidka--odkaz">
             <h3>Power joga</h3>
             <p>
               je zaměřená na láskyplné a jemné protažení nejvíce zatížených
@@ -89,9 +105,9 @@
           </a>
         </div>
       </section>
-      <section>
-        <div>
-          <a href="">
+      <section class="lekce__blok blok3">
+        <div class="lekce__nabidka">
+          <a href="" class="lekce__nabidka--odkaz">
             <h3>Teen jóga</h3>
             <p>
               mnoho dětí přešlo od dětí ke školákům …. a někteří už chodí i s
@@ -100,16 +116,16 @@
             <p>Úterý 15:30 - 16:30</p>
           </a>
         </div>
-        <div>
-          <a href="">
+        <div class="lekce__nabidka">
+          <a href="" class="lekce__nabidka--odkaz">
             <h3>Jóga pro děti</h3>
             <p>kde jinde začít než u nich.</p>
           </a>
         </div>
       </section>
-      <section>
-        <div>
-          <a href="">
+      <section class="lekce__blok blok4">
+        <div class="lekce__nabidka">
+          <a href="" class="lekce__nabidka--odkaz">
             <h3>Cvičení pro seniory</h3>
             <p>
               dle potřeby na židli, pomalé, nicméně s obrovskou péčí o každou
@@ -118,8 +134,8 @@
             <p>Středa 8:00 - 9:00</p>
           </a>
         </div>
-        <div>
-          <a href="">
+        <div class="lekce__nabidka">
+          <a href="" class="lekce__nabidka--odkaz">
             <h3>Jóga pro těhotné</h3>
             <p>
               není jen pro těhotné, ale i pro děti v jejich břiše. Součástí
@@ -128,9 +144,9 @@
           </a>
         </div>
       </section>
-      <section>
+      <section id="cenik" class="cenik">
         <h2>Ceník</h2>
-        <table>
+        <table class="cenik__tabulka">
           <thead>
             <tr>
               <th>
@@ -159,7 +175,7 @@
         </table>
       </section>
     </main>
-    <footer>
+    <footer class="footer" id="kontakt">
       <div>
         <h2>Yoko studio</h2>
         <p>Rychnovská 81, Jablonec nad Nisou</p>

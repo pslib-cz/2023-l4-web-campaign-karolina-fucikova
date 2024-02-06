@@ -1,0 +1,141 @@
+:root{
+    --svetlaoranzova: #FFDCA8;
+    --tmavaoranzova: #FCB900;
+    --cerna: #000000;
+}
+
+html{
+    font-family: 'Poppins', sans-serif;;
+}
+
+body{
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+/*HAMBURGER MENU*/
+
+.hamburger {
+    display: block;
+}
+
+.hamburger-nav {
+    background-color: var(--Bila);
+    border-top: 2px solid var(--Seda);
+    /*height: calc(100vh - 4px);*/
+    /*height: 100vh;*/
+}
+
+.hamburger-nav {
+    transform: scaleY(0);
+    transition: .5s;
+    transform-origin: top;
+}
+
+.hamburger-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 1em;
+    color: var(--cerna);
+    /*background-color: var(--Bila);*/
+}
+.hamburger-nav menu {
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+    .hamburger-btn {
+        display: none;
+    }
+
+    .hamburger-nav {
+        transform: none;
+        background-color: var(--svetlaoranzova);
+        border: none;
+        height: auto;
+    }
+
+    .hamburger-row {
+        display: flex;
+        justify-content: space-between;
+        color: var(--cerna);
+        align-content: center;
+        padding: 0;
+    }
+}
+
+.header{
+    background-color: var(--svetlaoranzova);
+}
+
+.uvod{
+    margin: 1em;
+}
+
+.uvod__img{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.lekce__blok{
+    display: flex;
+    background-color: var(--svetlaoranzova);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.blok1{
+    background-image: url(../img/background1.avif);
+}
+
+.blok2{
+    background-image: url(../img/background2.avif);
+}
+
+.blok4{
+    background-image: url(../img/backgroung4.avif);
+}
+
+.lekce__nabidka{
+    background-color: var(--tmavaoranzova);
+    border-radius: 12px;
+    padding: 1em;
+    margin: .5em;
+}
+
+.lekce__nabidka--odkaz{
+    color: black;
+}
+
+.cenik{
+    margin: .5em;
+}
+
+.cenik__tabulka{
+    border-collapse: collapse;
+    display: flex;
+    justify-content: center;
+}
+
+.cenik__tabulka tr {
+    border: thin black solid;
+    text-align: left;
+}
+
+.cenik__tabulka th{
+    padding: 1em;
+    font-weight: 400;
+}
+
+.footer{
+    background-color: var(--svetlaoranzova);
+    padding: 1em;
+}
