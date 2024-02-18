@@ -1,18 +1,19 @@
-:root{
+:root {
     --svetlaoranzova: #FFDCA8;
     --tmavaoranzova: #FCB900;
     --cerna: #000000;
 }
 
-html{
-    font-family: 'Poppins', sans-serif;;
+html {
+    font-family: 'Poppins', sans-serif;
+    ;
 }
 
-body{
+body {
     margin: 0;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
@@ -23,16 +24,10 @@ a{
 }
 
 .hamburger-nav {
-    background-color: var(--Bila);
-    border-top: 2px solid var(--Seda);
-    /*height: calc(100vh - 4px);*/
-    /*height: 100vh;*/
-}
-
-.hamburger-nav {
     transform: scaleY(0);
     transition: .5s;
     transform-origin: top;
+    height: 100vh;
 }
 
 .hamburger-row {
@@ -42,11 +37,19 @@ a{
     align-items: center;
     padding: 1em;
     color: var(--cerna);
-    /*background-color: var(--Bila);*/
+    background-color: var(--svetlaoranzova);
 }
-.hamburger-nav menu {
-    margin: 0;
-    padding: 0;
+
+.menu__link {
+    display: block;
+}
+
+.menu__link a {
+    color: var(--cerna);
+}
+
+.rezervace--btn {
+    background-color: var(--tmavaoranzova);
 }
 
 @media screen and (min-width: 768px) {
@@ -70,56 +73,97 @@ a{
     }
 }
 
-.header{
-    background-color: var(--svetlaoranzova);
+.navbar {
+    position: absolute;
+    width: 60vw;
+    transition: .5s;
+    right: 0;
 }
 
-.uvod{
+.menu {
+    padding: 0;
+    margin: 0;
+}
+
+.menu__link {
+    display: block;
+    text-align: left;
+    border-bottom: 2px solid var(--cerna);
+    padding: .8em 0 .5em 1em;
+}
+
+.uvod {
     margin: 1em;
 }
 
-.uvod__img{
+.uvod__img {
     width: 100%;
     object-fit: cover;
     border-radius: 12px;
+    max-width: 400px;
 }
 
-.lekce__blok{
+.lekce__blok {
     display: flex;
     background-color: var(--svetlaoranzova);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
 }
 
-.blok1{
+.blok1 {
     background-image: url(../img/background1.avif);
 }
 
-.blok2{
+.blok2 {
     background-image: url(../img/background2.avif);
 }
 
-.blok4{
+.blok3 {
+    background-image: url(../img/background3.avif);
+}
+
+.blok4 {
     background-image: url(../img/backgroung4.avif);
 }
 
-.lekce__nabidka{
+.lekce__nabidka {
+    position: relative;
     background-color: var(--tmavaoranzova);
     border-radius: 12px;
     padding: 1em;
     margin: .5em;
+    flex: 0 0 100%;
+    max-width: 300px;
 }
 
-.lekce__nabidka--odkaz{
+.nabidka__visible {
+    animation-name: lekce;
+    animation-duration: 1s;
+    animation-delay: 2s;
+}
+
+@keyframes lekce {
+    from {
+        left: 0;
+    }
+
+    to {
+        right: 0;
+    }
+}
+
+.lekce__nabidka--odkaz {
     color: black;
 }
 
-.cenik{
+.cenik {
     margin: .5em;
 }
 
-.cenik__tabulka{
+.cenik__tabulka {
     border-collapse: collapse;
     display: flex;
     justify-content: center;
@@ -130,12 +174,155 @@ a{
     text-align: left;
 }
 
-.cenik__tabulka th{
+.cenik__tabulka th {
     padding: 1em;
     font-weight: 400;
 }
 
-.footer{
+.cenik__tabulka th:last-child {
+    white-space: nowrap;
+}
+
+.footer {
     background-color: var(--svetlaoranzova);
-    padding: 1em;
+    padding: 0.25em 1em;
+}
+
+.footer__h2 {
+    font-weight: 400;
+    text-align: center;
+}
+
+.footer__blok {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    margin-bottom: 1.5em;
+}
+
+.footer__blok p {
+    margin: 0;
+}
+
+.footer__blok a {
+    color: var(--cerna);
+}
+
+.footer__copy {
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    .header {
+        display: flex;
+        background-color: var(--svetlaoranzova);
+        padding: .5em;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 16px;
+        justify-content: flex-end;
+        padding: 1em;
+        background-color: initial;
+    }
+
+    .menu__link {
+        border-bottom: none;
+        padding: 0;
+    }
+
+    .rezervace--btn {
+        padding: .5em;
+        border-radius: 20px;
+    }
+
+    .rezervace--btn:hover {
+        transform: scale(1.1);
+        transition: .5s;
+    }
+
+    .uvod {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .lekce__blok {
+        padding: 1em;
+        justify-content: space-between;
+    }
+
+    .lekce__blok::-webkit-scrollbar {
+        width: 0;
+    }
+
+    .nabidka__hidden {
+        visibility: hidden;
+        transition-delay: 1s;
+        transition-duration: 2s;
+        animation-name: hid;
+    }
+
+    @keyframes hid {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 100%;
+        }
+
+        0% {
+            opacity: 0;
+        }
+    }
+
+    .nabidka__visible {
+        transition-delay: 1s;
+        transition-duration: 2s;
+        animation-name: vis;
+    }
+
+    @keyframes vis {
+        0% {
+            opacity: 100%;
+        }
+
+        100% {
+            opacity: 0;
+        }
+
+        0% {
+            opacity: 100%;
+        }
+    }
+
+
+    .lekce__blok:hover .nabidka__hidden {
+        visibility: visible;
+        opacity: 100%;
+    }
+
+
+    .lekce__blok:hover .nabidka__visible {
+        visibility: hidden;
+        opacity: 0%;
+    }
+
+    .footer__h2 {
+        text-align: left;
+    }
+
+    .footer__wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .footer__blok:last-child {
+        text-align: end;
+    }
 }
