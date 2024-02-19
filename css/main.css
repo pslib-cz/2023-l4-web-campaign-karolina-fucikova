@@ -17,6 +17,11 @@ a {
     text-decoration: none;
 }
 
+::selection {
+    background-color: #c59100;
+    color: #ffffff;
+}
+
 /*HAMBURGER MENU*/
 
 .hamburger {
@@ -94,6 +99,16 @@ a {
 
 .uvod {
     margin: 1em;
+
+}
+
+.uvod__h1 {
+    margin: 20px 0;
+    font-size: 24px;
+}
+
+.uvod__text {
+    max-width: 560px;
 }
 
 .uvod__img {
@@ -108,25 +123,28 @@ a {
     background-color: var(--svetlaoranzova);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
     overflow-x: scroll;
     scroll-behavior: smooth;
 }
 
 .blok1 {
     background-image: url(../img/background1.avif);
+    background-position: top;
 }
 
 .blok2 {
     background-image: url(../img/background2.avif);
+    background-position: center;
 }
 
 .blok3 {
     background-image: url(../img/background3.avif);
+    background-position: top;
 }
 
 .blok4 {
     background-image: url(../img/backgroung4.avif);
+    background-position: center;
 }
 
 .lekce__nabidka {
@@ -161,6 +179,10 @@ a {
 
 .cenik {
     margin: .5em;
+}
+
+.cenik__h2 {
+    text-align: center;
 }
 
 .cenik__tabulka {
@@ -216,7 +238,7 @@ a {
     .header {
         display: flex;
         background-color: var(--svetlaoranzova);
-        padding: .5em;
+        padding: .5em 5em;
     }
 
     .menu {
@@ -227,6 +249,7 @@ a {
         justify-content: flex-end;
         padding: 1em;
         background-color: initial;
+        margin: auto 4.5em;
     }
 
     .menu__link {
@@ -246,12 +269,13 @@ a {
 
     .uvod {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         gap: 20px;
+        margin: 1em 5em;
     }
 
     .lekce__blok {
-        padding: 1em;
+        padding: 1em 5em;
         justify-content: space-between;
     }
 
@@ -263,53 +287,35 @@ a {
         visibility: hidden;
         transition-delay: 1s;
         transition-duration: 2s;
-        animation-name: hid;
-    }
-
-    @keyframes hid {
-        0% {
-            opacity: 0;
-        }
-
-        100% {
-            opacity: 100%;
-        }
-
-        0% {
-            opacity: 0;
-        }
+        opacity: 0%;
     }
 
     .nabidka__visible {
-        transition-delay: 1s;
-        transition-duration: 2s;
-        animation-name: vis;
+        transition-delay: 2s;
+        transition-duration: 1s;
     }
-
-    @keyframes vis {
-        0% {
-            opacity: 100%;
-        }
-
-        100% {
-            opacity: 0;
-        }
-
-        0% {
-            opacity: 100%;
-        }
-    }
-
 
     .lekce__blok:hover .nabidka__hidden {
         visibility: visible;
         opacity: 100%;
+        transition-delay: 1s;
+
     }
 
 
     .lekce__blok:hover .nabidka__visible {
         visibility: hidden;
         opacity: 0%;
+        transition-delay: 1s;
+
+    }
+
+    .cenik {
+        margin: 1em 5em;
+    }
+
+    .footer {
+        padding: .25em 5em;
     }
 
     .footer__h2 {
@@ -322,7 +328,78 @@ a {
         justify-content: space-between;
     }
 
+    .footer__blok {
+        margin: 0;
+    }
+
     .footer__blok:last-child {
         text-align: end;
     }
+}
+
+@media screen and (min-width: 961px) {
+    .header {
+        padding: .5em 16em;
+    }
+
+    .menu {
+        margin: auto 15em;
+    }
+
+    .uvod {
+        margin: 1em 16em;
+        justify-content: space-between;
+    }
+
+    .lekce__blok {
+        padding: 2em 16em;
+    }
+
+    .blok1 {
+        background-position: 50% 30%;
+    }
+
+    .blok2 {
+        background-position: 50% 25%;
+    }
+
+    .blok3 {
+        background-position: 75%;
+    }
+
+    .cenik {
+        margin: 1em 16em;
+    }
+
+    .footer {
+        padding: .25em 16em;
+    }
+
+}
+
+@media screen and (min-width: 1281px) {
+    .header {
+        padding: .5em 20em;
+    }
+
+    .menu {
+        margin: auto 20em;
+    }
+
+    .uvod {
+        margin: 1em 20em;
+    }
+
+    .lekce__blok {
+        padding: 2em 20em;
+    }
+
+    .cenik {
+        margin: 1em 20em;
+    }
+
+    .footer {
+        padding: .25em 20em;
+    }
+
 }
