@@ -39,6 +39,7 @@
     .hamburger-nav.active {
         transform: scaleY(1);
         background-color: #FFDCA8;
+        z-index: 1;
     }
 
     .hamburger.active span:nth-child(1) {

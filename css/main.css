@@ -121,20 +121,24 @@ a {
 .lekce__blok {
     display: flex;
     background-color: var(--svetlaoranzova);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     overflow-x: scroll;
     scroll-behavior: smooth;
 }
 
+.lekce__blok:has(.lekce__blok:hover) .lekce__blok:hover{
+    filter: blur(2);
+}
+
 .blok1 {
-    background-image: url(../img/background1.avif);
+    background-image: url(../img/background3.avif);
     background-position: top;
 }
 
 .blok2 {
-    background-image: url(../img/background2.avif);
+    background-image: url(../img/background4.jpg);
     background-position: center;
+    background-size: 25%;
 }
 
 .blok3 {
@@ -143,8 +147,9 @@ a {
 }
 
 .blok4 {
-    background-image: url(../img/backgroung4.avif);
+    background-image: url(../img/background4.jpg);
     background-position: center;
+    background-size: 25%;
 }
 
 .lekce__nabidka {
@@ -157,7 +162,7 @@ a {
     max-width: 300px;
 }
 
-.nabidka__visible {
+.lekce__nabidka--visible {
     animation-name: lekce;
     animation-duration: 1s;
     animation-delay: 2s;
@@ -173,7 +178,7 @@ a {
     }
 }
 
-.lekce__nabidka--odkaz {
+.lekce__odkaz {
     color: black;
 }
 
@@ -196,12 +201,12 @@ a {
     text-align: left;
 }
 
-.cenik__tabulka th {
+.cenik__tabulka th, td {
     padding: 1em;
     font-weight: 400;
 }
 
-.cenik__tabulka th:last-child {
+.cenik__tabulka td {
     white-space: nowrap;
 }
 
@@ -283,19 +288,19 @@ a {
         width: 0;
     }
 
-    .nabidka__hidden {
+    .lekce__nabidka--hidden {
         visibility: hidden;
         transition-delay: 1s;
         transition-duration: 2s;
         opacity: 0%;
     }
 
-    .nabidka__visible {
+    .lekce__nabidka--visible {
         transition-delay: 2s;
         transition-duration: 1s;
     }
 
-    .lekce__blok:hover .nabidka__hidden {
+    .lekce__blok:hover .lekce__nabidka--hidden {
         visibility: visible;
         opacity: 100%;
         transition-delay: 1s;
@@ -303,7 +308,7 @@ a {
     }
 
 
-    .lekce__blok:hover .nabidka__visible {
+    .lekce__blok:hover .lekce__nabidka--visible {
         visibility: hidden;
         opacity: 0%;
         transition-delay: 1s;
